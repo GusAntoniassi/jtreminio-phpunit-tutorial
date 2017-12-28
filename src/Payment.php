@@ -6,7 +6,8 @@ class Payment
     const API_ID = 123456;
     const TRANS_KEY = 'TRANSACTION KEY';
 
-    public function processPayment(\AuthorizeNetAIM $transaction, array $paymentDetails) {
+    public function processPayment(\AuthorizeNetAIM $transaction, array $paymentDetails)
+    {
         $transaction->amount = $paymentDetails['amount'];
         $transaction->card_num = $paymentDetails['card_num'];
         $transaction->exp_date = $paymentDetails['exp_date'];
@@ -20,7 +21,8 @@ class Payment
         }
     }
 
-    public function savePayment($transactionid) {
+    public function savePayment($transactionid)
+    {
         // lógica para salvar o ID da transação no banco ou em outro lugar vai aqui
         return true;
     }
